@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import BlogAddForm from './Component/BlogAddForm';
+import Header from './Component/Header';
+import BlogContextProvider from './store/BlogContextProvider';
+import BlogCart from './Component/BlogCart';
 
 function App() {
+
+  const [blogFormShow,setBlogFormShow] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BlogContextProvider>
+    <Header onShow={setBlogFormShow}></Header>
+    {blogFormShow && <BlogAddForm onClose={setBlogFormShow} />}
+    <BlogCart></BlogCart>
+    </BlogContextProvider>
+    </>
   );
 }
 

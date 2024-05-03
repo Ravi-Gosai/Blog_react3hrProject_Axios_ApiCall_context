@@ -1,0 +1,16 @@
+.form{
+    background-color: aqua;
+    width: 60vw;
+    height: 60vh;
+    margin: 70px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.innerFormDiv{
+    margin: 30px;
+    padding: 30px;
+}
+input{
+    width: 200px;
+}
